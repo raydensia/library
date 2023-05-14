@@ -8,5 +8,81 @@
         <script src="library.js" defer></script>
     </head>
     <body>
+      <div class="new-book-modal" id="new-book-modal">
+        <div class="new-book-modal-content">
+          <div class="new-book-modal-title">Add New Book</div>
+          <form action="" method="get" class="new-book-form">
+            <div class="form-row">
+              <input type="text" name="title" id="title" placeholder="Title">
+            </div>
+            <div class="form-row">
+              <input type="text" name="author" id="author" placeholder="Author">
+            </div>
+            <div class="form-row">
+              <input type="number" name="pages" id="pages" placeholder="Pages">
+            </div>
+            <div class="form-row type-row">
+              <input type="radio" name="type" id="fiction">
+              <label for="fiction">Fiction</label>
+              <input type="radio" name="type" id="nonfiction">
+              <label for="nonfiction">Nonfiction</label>
+            </div>
+            <div class="form-row read-row">
+              <label class="switch" for="read">
+                <input type="checkbox" name="read" id="read">
+                <span class="slider round"></span>
+              </label>
+              <div class="read-label">Read?</div>
+            </div>
+            <div class="form-row stars-row">
+              <img src="./images/star-outline.svg" alt="star-outline" class="star star-one">
+              <img src="./images/star-outline.svg" alt="star-outline" class="star star-two">
+              <img src="./images/star-outline.svg" alt="star-outline" class="star star-three">
+              <img src="./images/star-outline.svg" alt="star-outline" class="star star-four">
+              <img src="./images/star-outline.svg" alt="star-outline" class="star star-five">
+            </div>
+            <div class="form-row submit-row">
+              <button type="submit" id="submit-new-book-button">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+
+
+      <div class="main">
+        <div class="header">
+          <h1 class="page-title">My Bookshelf</h1>
+          <div class="profile-container">
+            <img src="./images/IMG_0258.jpg" alt="current user profile picture" class="current-user-profile-picture">
+            <div class="current-user-name">Rayden Sia</div>
+            <div class="current-user-handle">@raydensia</div>
+          </div>
+        </div>
+        <div class="action-row">
+          <div class="filters">
+            <button class="fiction-filter filter-button" id="fiction-button">Fiction</button>
+            <button class="nonfiction-filter filter-button" id="nonfiction-button">Nonfiction</button>
+          </div>
+          <div class="actions">
+            <button class="stats-button" id="stats">Stats</button>
+            <button class="new-book-button" id="new">Add Book</button>
+            <!-- <div class="books-read">Books read:</div> -->
+          </div>
+        </div>
+          <div class="bookshelf" id="bookshelf">
+            <!-- <div class="book">
+              <img src="./images/the-way-of-kings.jpg" alt="book cover" class="book-cover">
+              <div class="book-info">
+                <div class="book-author">Brandon Sanderson</div>
+                <div class="book-title">The Way of Kings</div>
+                <div class="book-type">Fiction</div>
+                <div class="book-pages">1007 pages</div>
+                <div class="book-read">Read</div>
+                <div class="book-rating">5/5</div>
+              </div>
+            </div> -->
+      </div>
     </body>
 </html>
