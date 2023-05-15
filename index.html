@@ -8,49 +8,142 @@
         <script src="library.js" defer></script>
     </head>
     <body>
-      <div class="new-book-modal" id="new-book-modal">
-        <div class="new-book-modal-content">
-          <div class="new-book-modal-title">Add New Book</div>
-          <form action="" method="get" class="new-book-form">
+      <!-- new book modal -->
+      <div class="new-book-modal new-book-modal-closed" id="new-book-modal">
+        <div class="new-book-modal-content" id="new-book-modal-content">
+          <div class="new-book-modal-title">New Book</div>
+          <form action="" method="get" class="new-book-form" id='new-book-form'>
             <div class="form-row">
-              <input type="text" name="title" id="title" placeholder="Title">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" placeholder="" required />
             </div>
             <div class="form-row">
-              <input type="text" name="author" id="author" placeholder="Author">
+              <label for="author">Author</label>
+              <input type="text" name="author" id="author" placeholder="" required />
             </div>
             <div class="form-row">
-              <input type="number" name="pages" id="pages" placeholder="Pages">
+              <label for="pages">Pages</label>
+              <input type="number" name="pages" id="pages" placeholder="" required />
             </div>
-            <div class="form-row type-row">
-              <input type="radio" name="type" id="fiction">
-              <label for="fiction">Fiction</label>
-              <input type="radio" name="type" id="nonfiction">
-              <label for="nonfiction">Nonfiction</label>
-            </div>
-            <div class="form-row read-row">
-              <label class="switch" for="read">
-                <input type="checkbox" name="read" id="read">
-                <span class="slider round"></span>
-              </label>
-              <div class="read-label">Read?</div>
-            </div>
-            <div class="form-row stars-row">
-              <img src="./images/star-outline.svg" alt="star-outline" class="star star-one">
-              <img src="./images/star-outline.svg" alt="star-outline" class="star star-two">
-              <img src="./images/star-outline.svg" alt="star-outline" class="star star-three">
-              <img src="./images/star-outline.svg" alt="star-outline" class="star star-four">
-              <img src="./images/star-outline.svg" alt="star-outline" class="star star-five">
-            </div>
+            <fieldset class="form-row type-row">
+              <legend>Type</legend>
+              <div class="radio-container">
+                <input type="radio" name="type" id="fiction" value="Fiction" checked/>
+                <label for="fiction" class="radio-label">Fiction</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="type" id="nonfiction" value="Nonfiction" />
+                <label for="nonfiction" class="radio-label">Nonfiction</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row status-row">
+              <legend>Status</legend>
+              <div class="radio-container">
+                <input type="radio" name="status" id="unread" value="Unread" checked />
+                <label for="unread">Unread</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="status" id="read" value="Read">
+                <label for="read">Read</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="status" id="in-progress" value="In Progress">
+                <label for="in-progress">In Progress</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="status" id="to-purchase" value="To Purchase">
+                <label for="to-purchase">To Purchase</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row rating-row">
+              <legend>Rating</legend>
+              <div class="stars">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-one">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-two">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-three">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-four">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-five">
+              </div>
+            </fieldset>
+
             <div class="form-row submit-row">
-              <button type="submit" id="submit-new-book-button">Submit</button>
+              <button type="submit" id="submit-new-book-button">Add to Shelf</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- edit book info modal -->
+      <div class="manage-book-modal manage-book-modal-closed" id="manage-book-modal">
+        <div class="manage-book-modal-content" id="manage-book-modal-content">
+          <div class="manage-book-modal-title">Manage Book</div>
+          <form action="" method="get" class="manage-book-form" id='manage-book-form'>
+            <div class="form-row">
+              <label for="title">Title</label>
+              <input type="text" name="manage-title" id="manage-title" placeholder="" required />
+            </div>
+            <div class="form-row">
+              <label for="author">Author</label>
+              <input type="text" name="manage-author" id="manage-author" placeholder="" required />
+            </div>
+            <div class="form-row">
+              <label for="pages">Pages</label>
+              <input type="number" name="manage-pages" id="manage-pages" placeholder="" required />
+            </div>
+            <fieldset class="form-row type-row">
+              <legend>Type</legend>
+              <div class="radio-container">
+                <input type="radio" name="manage-type" id="manage-fiction" value="Fiction" checked/>
+                <label for="manage-fiction" class="radio-label">Fiction</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="manage-type" id="manage-nonfiction" value="Nonfiction" />
+                <label for="manage-nonfiction" class="radio-label">Nonfiction</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row status-row">
+              <legend>Status</legend>
+              <div class="radio-container">
+                <input type="radio" name="manage-status" id="manage-unread" value="Unread" checked />
+                <label for="manage-unread">Unread</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="manage-status" id="manage-read" value="Read">
+                <label for="manage-read">Read</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="manage-status" id="manage-in-progress" value="In Progress">
+                <label for="manage-in-progress">In Progress</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="manage-status" id="manage-to-purchase" value="To Purchase">
+                <label for="manage-to-purchase">To Purchase</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row rating-row">
+              <legend>Rating</legend>
+              <div class="stars">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-one">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-two">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-three">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-four">
+                <img src="./images/star-outline.svg" alt="star-outline" class="star star-five">
+              </div>
+            </fieldset>
+
+            <div class="form-row submit-row">
+              <button type="submit" id="submit-manage-book-button">Complete</button>
             </div>
           </form>
 
         </div>
       </div>
 
-
-
+      <!-- main content -->
       <div class="main">
         <div class="header">
           <h1 class="page-title">My Bookshelf</h1>
@@ -72,17 +165,20 @@
           </div>
         </div>
           <div class="bookshelf" id="bookshelf">
-            <!-- <div class="book">
+            <div class="book">
               <img src="./images/the-way-of-kings.jpg" alt="book cover" class="book-cover">
               <div class="book-info">
                 <div class="book-author">Brandon Sanderson</div>
                 <div class="book-title">The Way of Kings</div>
                 <div class="book-type">Fiction</div>
                 <div class="book-pages">1007 pages</div>
-                <div class="book-read">Read</div>
+                <div class="book-status">Status</div>
                 <div class="book-rating">5/5</div>
+                <div class="manage-book-button-container">
+                  <button class="manage-book-button">Manage Book</button>
+                </div>
               </div>
-            </div> -->
+            </div>
       </div>
     </body>
 </html>
