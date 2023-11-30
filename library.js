@@ -150,12 +150,17 @@ function formSubmit(event) {
   }, 300);
 }
 
+function manageBook(event) {
+
+}
+
 newBookButton.addEventListener('click', displayNewBookModal);
 // newBookModal.addEventListener('click', closeModal);
 // newBookModalContent.addEventListener('click', (e) => e.stopPropagation);
 window.addEventListener('click', closeModal);
 submitNewBookButton.addEventListener('click', addBookToLibrary);
 form.addEventListener('submit', formSubmit);
+manageBookButton.addEventListener('click', manageBook)
 
 // displayBooks();
 
